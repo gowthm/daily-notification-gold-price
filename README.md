@@ -1,6 +1,6 @@
-# Salem Gold Price Alert 🥇
+# Gold Price Alert 🥇
 
-Automatically fetches the live 22K gold price for Salem and sends a Telegram notification twice a day — at **10:00 AM IST** and **3:00 PM IST**.
+Automatically fetches the live 22K gold price for locations and sends a Telegram notification twice a day — at **10:00 AM IST** and **3:00 PM IST**.
 
 ## How It Works
 
