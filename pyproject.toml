@@ -7,6 +7,6 @@ requires-python = ">=3.11"
 dependencies = [
     "bs4>=0.0.2",
     "cloudscraper>=1.2.71",
-    "dotenv>=0.9.9",
+    "python-dotenv>=1.0.0",
     "requests>=2.33.1",
 ]
