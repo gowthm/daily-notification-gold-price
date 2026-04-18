@@ -1,0 +1,38 @@
+name: Gold Price Alert
+
+on:
+  schedule:
+    - cron: '30 4 * * *'   # 10:00 AM IST
+    - cron: '30 9 * * *'   # 3:00 PM IST
+  workflow_dispatch:        # allow manual run for testing
+
+jobs:
+  check-price:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install cloudscraper requests
+
+      - name: Run gold alert
+        run: python gold_alert.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          TZ: Asia/Kolkata
+
+      - name: Save price.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add price.json
+          git diff --cached --quiet || git commit -m "chore: update price.json"
+          git push
