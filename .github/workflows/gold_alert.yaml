@@ -1,10 +1,7 @@
 name: Gold Price Alert
 
 on:
-  schedule:
-    - cron: '30 4 * * *'   # 10:00 AM IST
-    - cron: '45 9 * * *'   # 3:00 PM IST
-  workflow_dispatch:        # allow manual run for testing
+  workflow_dispatch:
 
 jobs:
   check-price:
