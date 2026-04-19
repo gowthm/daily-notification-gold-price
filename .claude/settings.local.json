@@ -3,7 +3,10 @@
     "allow": [
       "Bash(uv run *)",
       "Bash(where uv *)",
-      "Bash(powershell.exe *)"
+      "Bash(powershell.exe *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
