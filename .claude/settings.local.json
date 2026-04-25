@@ -6,7 +6,9 @@
       "Bash(powershell.exe *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "WebFetch(domain:www.grtjewels.com)",
+      "Bash(python debug_scrape.py)"
     ]
   }
 }

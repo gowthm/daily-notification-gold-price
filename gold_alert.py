@@ -6,10 +6,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_gold_price():
-    url = "https://www.goodreturns.in/gold-rates/salem.html"
+    url = "https://www.grtjewels.com/"
     scraper = cloudscraper.create_scraper()
     res = scraper.get(url)
-    match = re.search(r'&#x20b9;([\d,]+)</strong> per gram for 22 karat', res.text)
+    print("RES", res)
+    match = re.search(r'GOLD 22 KT/1g\s*-\s*₹\s*([\d,]+)', res.text)
+    print("Match", match)
     if not match:
         raise ValueError("22K gold price not found on page")
     return int(match.group(1).replace(",", ""))
